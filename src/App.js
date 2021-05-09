@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import HomePage from "./Components/HomePage/HomePage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Menu from "./Components/MenuBar/Menu";
+import About from "./Components/AboutPage/About";
+import Footer from "./Components/ShearedFolder/Footer/Footer";
+import PortfolioPage from "./Components/PortfolioPage/PortfolioPage";
+import ArticelPage from "./Components/ArticelPage/ArticelPage";
+import ContactPage from "./Components/ContactPage/ContactPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Menu />
+
+        <Switch>
+        <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/home">
+            <HomePage />
+          </Route>
+          <Route path="/aboutMe">
+            <About />
+          </Route>
+          <Route path="/portfolio">
+            <PortfolioPage />
+          </Route>
+          <Route path="/blog">
+            <ArticelPage />
+          </Route>
+          <Route path="/contact">
+            <ContactPage />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </>
   );
 }
 

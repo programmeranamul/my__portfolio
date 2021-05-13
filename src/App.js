@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import HomePage from "./Components/HomePage/HomePage";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,6 +8,8 @@ import Footer from "./Components/ShearedFolder/Footer/Footer";
 import PortfolioPage from "./Components/PortfolioPage/PortfolioPage";
 import ArticelPage from "./Components/ArticelPage/ArticelPage";
 import ContactPage from "./Components/ContactPage/ContactPage";
+import MouseParticles from "react-mouse-particles";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Menu />
 
         <Switch>
-        <Route exact path="/">
+          <Route exact path="/">
             <HomePage />
           </Route>
           <Route exact path="/home">
@@ -37,6 +38,17 @@ function App() {
           </Route>
         </Switch>
         <Footer />
+        <MouseParticles
+          g={1}
+          num={6}
+          color="random"
+          cull="stats,image-wrapper"
+          level={6}
+        />
+        <MessengerCustomerChat
+          pageId="106794868255134"
+          appId="620513202238912"          
+        />
       </Router>
     </>
   );

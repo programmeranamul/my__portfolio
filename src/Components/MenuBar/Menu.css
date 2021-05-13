@@ -14,4 +14,6 @@
   color: #ccd6f6 !important;
   font-weight: 700;
 }
-
+.navbar-collapse  {
+  text-align: center !important;
+}

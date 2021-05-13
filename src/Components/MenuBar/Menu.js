@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Menu.css";
 
 const Menu = () => {
+ 
+  
+
   return (
     <header className="mt-3 container-fluid">
-      <Navbar expand="md" className="navbar-dark">
-        <Navbar.Brand href="#home" className="logo light__white__color">Anamul</Navbar.Brand>
+      <Navbar expand="md" className={`navbar-dark px-0`}>
+        <Navbar.Brand href="#home" className="logo light__white__color">
+          Anamul
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
@@ -26,7 +31,7 @@ const Menu = () => {
             <Nav.Link activeClassName="active" as={NavLink} to="contact">
               Contact
             </Nav.Link>
-            <a href="">             
+            <a href="">
               <Button variant="outline-success">Resume</Button>
             </a>
           </Nav>

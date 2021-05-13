@@ -5,6 +5,7 @@ import Typed from "react-typed";
 import "./Banner.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Banner = () => {
   return (
@@ -40,22 +41,23 @@ const Banner = () => {
             <Button variant="success" className="mr-3" as={Link} to="/aboutMe">
               About Me
             </Button>
-            <Button variant="outline-success" as={Link} to="/contact">Get in touch</Button>
+            <Button variant="outline-success" as={Link} to="/contact">
+              Get in touch
+            </Button>
           </div>
         </div>
         <div className="col-md-6"></div>
       </div>
-      <div>
-          <div className="icons">
-            {socialIcons.map((icon) => (
-              <a href={icon.link} key={icon.link} target="_blank">
-                <FontAwesomeIcon
-                  icon={icon.icon}
-                  className={`${icon.className} icon`}
-                />
-              </a>
-            ))}
-          </div>
+
+      <div className="icons mt-4 mt-md-0">
+        {socialIcons.map((icon) => (
+          <a href={icon.link} key={icon.link} target="_blank">
+            <FontAwesomeIcon
+              icon={icon.icon}
+              className={`${icon.className} icon`}
+            />
+          </a>
+        ))}
       </div>
     </div>
   );
